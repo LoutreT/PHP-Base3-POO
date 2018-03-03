@@ -1,0 +1,16 @@
+#Personnage{
+  width: 100%;
+  background-color: grey;
+}
+
+.Personnage1{
+  width:300px;
+  background-color: white;
+  margin:10px;
+}
+
+.Personnage2{
+  width:300px;
+  background-color: white;
+  margin:10px;
+}
