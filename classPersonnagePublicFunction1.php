@@ -12,16 +12,16 @@
 // auteur Vincent Nx (LoutreT)
 
 
-    class Personnage            // Voilà ici je créée une classe, un moule
+    class Personnage            // Voilà ici je rentre dans une classe, un moule, pour créer un OBJET.
     {
-      private $_force;          // et ici je crée des niveaux de propriétés
-      private $_localisation;   // Propriété de niveau private.
+      private $_force;          // et ici je crée des niveaux de propriétés...
+      private $_localisation;   // ... de niveau 'private'.
       private $_experience;
       private $_degats;
 
 
       public function deplacer()  // ici je crée une méthode, une fonction.
-      {
+      {                           // elle a aussi une propriété de niveau 'public'
 
       }
 
@@ -38,6 +38,9 @@
       }
 
     }
+
+    $perso = new Personnage     // "new" indique au programme qu'il s'agit d'un nouvel Objet créé par la CLASS Personnage.
+    $perso->parler();
 
   ?>
 
