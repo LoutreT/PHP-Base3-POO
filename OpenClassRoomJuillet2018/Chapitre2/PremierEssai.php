@@ -35,6 +35,9 @@ $perso01 = new Personnage ;
 $perso02 = new Personnage ;
 
 $perso01->frapper($perso02) ;
+$perso01->gagnerExperience() ;
 
+$perso02->frapper($perso01) ;
+$perso02->gagnerExperience() ;
 
 ?>
