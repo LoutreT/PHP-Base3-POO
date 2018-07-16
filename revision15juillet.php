@@ -18,10 +18,12 @@
     <?php
       class Personnage
       {
+/////   LES ATTRIBUTS   ///////////////////////////////////////////////////////
         private $_force;
         private $_experience;
         private $_degats;
 
+/////   LES FONCTIONS   ///////////////////////////////////////////////////////
         public function frapper(Personnage $PersoAFrapper)
         {
           $PersoAFrapper->_degats += $this->_force ;
@@ -32,15 +34,41 @@
           $this->_experience++;
         }
 
-
+/////   LES MUTATEURS   ///////////////////////////////////////////////////////
         public function setForce($force)  // ici setForce permet de muter, c'est
         {                                 //  un MUTATEUR
-          return $this->_force
+          if(!is_int($force))  // integer pour limiter aux nombres entiers
+          {
+            trigger_error("La force d un personnage doit etre un nombre entier",E_USER_WARNING);
+            return;
+          }
+          if($force > 100)
+          {
+            trigger_error("La force d un personnage ne peut dépasser 100",E_USER_WARNING);
+            return;
+          }
+          $this->_force = $force;
         }
 
+        public function setExperience($experience)
+        {
+          if(is_int($experience))
+          {
+            trigger_error("La force d un personnage doit etre un nombre entier",E_USER_WARNING);
+            return;
+          }
+          if ($experience > 100)
+          {
+            trigger_error("La force d un personnage ne peut dépasser 100",E_USER_WARNING);
+            return;
+          }
+          $this->_experience = $experience;
+        }
+
+/////   LES ACCESSEURS   //////////////////////////////////////////////////////
                                  // L'ACCESSEUR (Getters) permet de
         public function force() // accesseur permettant d'utiliser la valeur...
-        {                        // ...de l'attribut degats au sein de la classe.
+        {                        // ...de l'attribut force au sein de la classe.
           return $this->_force;
         }
 
@@ -53,17 +81,31 @@
         {
           return $this->_degats;
         }
-
       }
-      $perso01 = new Personnage
-      $perso02 = new Personnage
 
-      $perso01->gagner()
-      $perso02->setForce(10); // ici la force vaut 10
 
-      $perso02->gagner()
 
-      $perso01->gagner()
+
+/////    NEW OBJET GRACE A LA CLASSE   ////////////////////////////////////////
+
+      $perso1 = new Personnage;
+      $perso2 = new Personnage;
+
+      $perso1->frapper($perso2);
+      $perso2->gagnerExperience();
+
+      $perso2->frapper($perso1)
+      $perso2->gagnerExperience();
+
+//////////// Ci-dessous, juste affichage des valeurs des attributs grace aux accesseurs :
+      echo "Le personnage 1 a", $perso1->force(), " de force, mais le personnage 2 a", $perso2->force()," de force.<br/>";
+
+      echo "Le personnage 1 a", $perso1->experience(), " d experience, mais le personnage 2 a", $perso2->experience()," d experience.<br/>";
+
+      echo "Le personnage 1 a", $perso1->degats(), " de degats, mais le personnage 2 a", $perso2->degats()," de degats.<br/>";
+
+      $perso1->gagner()
+
     ?>
 
 
