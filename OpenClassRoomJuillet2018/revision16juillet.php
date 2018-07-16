@@ -64,9 +64,8 @@
         }
 
 /////   LES ACCESSEURS   //////////////////////////////////////////////////////
-                                 // L'ACCESSEUR (Getters) permet de
-        public function force() // accesseur permettant d'utiliser la valeur...
-        {                        // ...de l'attribut force au sein de la classe.
+        public function force() // accesseur permettant de lire la valeur...
+        {                        // ...de l'attribut "force" au sein de la classe.
           return $this->_force;
         }
 
