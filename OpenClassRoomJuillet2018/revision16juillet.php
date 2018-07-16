@@ -98,11 +98,11 @@
       $perso2->gagnerExperience();
 
 //////////// Ci-dessous, juste affichage des valeurs des attributs grace aux accesseurs :
-      echo "Le personnage 1 a", $perso1->force(), " de force, mais le personnage 2 a", $perso2->force()," de force.<br/>";
+      echo "Le personnage 1 a ", $perso1->force(), " de force, mais le personnage 2 a ", $perso2->force()," de force.<br/>";
 
-      echo "Le personnage 1 a", $perso1->experience(), " d experience, mais le personnage 2 a", $perso2->experience()," d experience.<br/>";
+      echo "Le personnage 1 a ", $perso1->experience(), " d experience, mais le personnage 2 a ", $perso2->experience()," d experience.<br/>";
 
-      echo "Le personnage 1 a", $perso1->degats(), " de degats, mais le personnage 2 a", $perso2->degats()," de degats.<br/>";
+      echo "Le personnage 1 a ", $perso1->degats(), " de degats, mais le personnage 2 a ", $perso2->degats()," de degats.<br/>";
 
     ?>
 
