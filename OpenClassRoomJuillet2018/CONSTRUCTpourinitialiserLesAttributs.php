@@ -62,7 +62,7 @@
 
       }
 
-      $perso1 = new personnage;
+      $perso1 = new personnage(,);
 
       $perso1->setForce(30);
       $perso1->setExperience(15)
