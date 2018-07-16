@@ -82,11 +82,7 @@
         }
       }
 
-
-
-
 /////    NEW OBJET GRACE A LA CLASSE   ////////////////////////////////////////
-
       $perso1 = new Personnage;
       $perso2 = new Personnage;
 
@@ -103,12 +99,7 @@
 
       echo "Le personnage 1 a", $perso1->degats(), " de degats, mais le personnage 2 a", $perso2->degats()," de degats.<br/>";
 
-      $perso1->gagner()
-
     ?>
-
-
-
 
 
   </body>
