@@ -1,5 +1,4 @@
-// Effacé ! A recommencer pour bien réviser.
-<!DOCTYPE html>
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -12,7 +11,7 @@
         - Attribut avec leur propriété (public-private-protected)
         - Fonction avec leur propriété (public-private-protected)
         - Mutateur, pour transformer la valeur de l'attribut.
-        - Accesseur pour
+        - Accesseur pour voir l'attribut.
      -->
 
     <?php
