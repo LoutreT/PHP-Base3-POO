@@ -85,11 +85,11 @@
       $perso1 = new Personnage;
       $perso2 = new Personnage;
 
-      $perso1 = setForce(10);
-      $perso1 = setExperience(2);
+      $perso1->setForce(10);
+      $perso1->setExperience(2);
 
-      $perso2 = setForce(90);
-      $perso2 = setExperience(58);
+      $perso2->setForce(90);
+      $perso2->setExperience(58);
 
       $perso1->frapper($perso2);
       $perso1->gagnerExperience();
