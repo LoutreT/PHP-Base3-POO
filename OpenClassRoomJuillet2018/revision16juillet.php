@@ -17,14 +17,14 @@
       class Personnage
       {
 /////   LES ATTRIBUTS   ///////////////////////////////////////////////////////
-        private $_force;
-        private $_experience;
-        private $_degats;
+        private $_force = 15;
+        private $_experience = 10;
+        private $_degats = 12;
 
 /////   LES FONCTIONS   ///////////////////////////////////////////////////////
-        public function frapper(Personnage $PersoAFrapper)
+        public function frapper(Personnage $persoAFrapper)
         {
-          $PersoAFrapper->_degats += $this->_force ;
+          $persoAFrapper->_degats += $this->_force ;
         }
 
         public function gagner()
@@ -50,7 +50,7 @@
 
         public function setExperience($experience)
         {
-          if(is_int($experience))
+          if(!is_int($experience))
           {
             trigger_error("La force d un personnage doit etre un nombre entier",E_USER_WARNING);
             return;
@@ -85,11 +85,11 @@
       $perso1 = new Personnage;
       $perso2 = new Personnage;
 
-      $perso1 = setForce(15);
-      $perso1 = setExperience(11);
+      $perso1 = setForce(10);
+      $perso1 = setExperience(2);
 
-      $perso2 = setForce(46);
-      $perso2 = setExperience(55);
+      $perso2 = setForce(90);
+      $perso2 = setExperience(58);
 
       $perso1->frapper($perso2);
       $perso1->gagnerExperience();
