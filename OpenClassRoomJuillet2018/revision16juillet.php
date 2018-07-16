@@ -27,7 +27,7 @@
           $persoAFrapper->_degats += $this->_force ;
         }
 
-        public function gagner()
+        public function gagnerExperience()
         {
           $this->_experience++;
         }
