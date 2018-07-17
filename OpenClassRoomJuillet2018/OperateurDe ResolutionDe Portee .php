@@ -21,59 +21,39 @@
         const FORCE_MOYENNE = 50;
         const FORCE_GRANDE = 80;
 
+////////   VARIABLE STATIQUE    ////////////////////////////////////////////////
+        private static $_texteADire ="Je découvre la fonction
+        statique dans le chapitre 3";
+
 ////////   __CONSTRUCT (iniatilisateur)    /////////////////////////////////////
-        public function __construct($force, $degats)
+        public function __construct($forceinitiale)
         {
-          echo "le coin \'__construct\' pour initialiser"
-          $this->setForce($force);
-          $this->setDegats($degats);
-          $this->_experience = 1;
+          $this->setForce($forceinitiale);
+          // $this->setDegats($degats);
+          // $this->_experience = 1;
         }
 
 ////////   FUNCTION    /////////////////////////////////////////////////////////
         public function frapper(Personnage $PersoAFrapper)
         {
-          $PersoAFrapper->_degats += $this->_force;
+          // $PersoAFrapper->_degats += $this->_force;
         }
 
 ////////   MUTATEUR    /////////////////////////////////////////////////////////
         public function setForce($force)
         {
-          if(!is_int($force))
+          if(!in_array($force,[self::FORCE_PETITE, self::FORCE_MOYENNE,
+          self::FORCE_GRANDE]))
           {
-            trigger_error("La force est bien un nombre entier", E_USER_WARNING);
-            return;
+              $this->_force = $force;
           }
-          if($force > 100) // Eviter d'avoir une valeur supérieure à 100
-          {
-            trigger_error("La force ne peut pas dépasser 100", E_USER_WARNING);
-          }
-          $this->_force = $force;
         }
 
-        public function setDegats($degats)
+        public static function parler()
         {
-          if(!is_int($degats))
-          {
-            trigger_error("Les dégats est bien un nombre entier", E_USER_WARNING);
-            return;
-          }
-          $this->_degats = $degats;
-////////   MUTATEUR    ////////////////////////////////////////////////////////
-        public function force()
-        {
-          return $this->_force;
+          echo self::$_texteADire;
         }
-
       }
-
-      $perso1 = new personnage;
-
-      $perso1->setForce(30);
-      $perso1->setExperience(15)
-
-      $perso1->frapper($perso2);
-      $perso1->gagnerExperience();
 
     ?>
 
