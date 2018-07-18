@@ -7,6 +7,7 @@
   <body>
 
     <?php
+
       class PersonnageManager
       {
         private $_db;  /* Attribut, c'est ici qu'on instancie pour la PDO - BDD
