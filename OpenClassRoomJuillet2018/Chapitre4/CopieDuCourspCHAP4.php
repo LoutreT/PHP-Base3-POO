@@ -2,7 +2,6 @@
 
 <!-- /////////////////////////    INDEX    ///////////////////////////////// -->
 <?php
-
 $perso = new Personnage([
   'nom' => 'Victor',
   'forcePerso' => 5,
