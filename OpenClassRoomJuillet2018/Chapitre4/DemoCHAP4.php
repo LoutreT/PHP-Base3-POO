@@ -128,6 +128,12 @@ class PersonnagesManager
 		$q->bindValue(':experience', $perso->experience(), PDO::PARAM_INT);
 
 		$q->execute();
+		
+		if ($q->rowCount() == 1) { // suggestion Caroline
+			echo 'Perso added.';     // suggestion
+		} else {                   // suggestion
+			echo 'Failed.'           // suggestion
+		}
 	}
 
 	public function delete(Personnage $perso)
