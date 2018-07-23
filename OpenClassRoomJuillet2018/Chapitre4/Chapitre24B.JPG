@@ -1,0 +1,37 @@
+<?php
+
+/* Pour éviter d'afficher le type d'erreurs à des inconnus qui
+visiteraient le siteweb :   */
+try
+{
+  $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8',
+  'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch (Exception $e)
+{
+        die('Erreur : ' . $e->getMessage());
+}
+
+
+
+  $req = $bdd->prepare('SELECT nom FROM jeux_video WHERE
+    possesseur = ? AND prix <= ? ORDER BY prix');
+
+  $req->execute(array($_GET["possesseur"]));
+
+  echo "<ul>"
+  while($donnees = $req->fetch())
+  {
+    echo '<li>'. $donnees['nom'].'('.$donnees['prix'].' EUR) </li>';
+  }
+  echo "</ul>";
+
+  $req->CloseCursor();
+
+// THEORIE :  $donnees = $reponse->fetch();  // fetch = "va chercher"
+  /* Ci-DESSOUS : $donnees deviendra un array après qu'éléments soient récupérées
+  dans un phpmyadmin ligne après lignes.
+
+while($donnees = $reponse->fetch())*/
+
+?>

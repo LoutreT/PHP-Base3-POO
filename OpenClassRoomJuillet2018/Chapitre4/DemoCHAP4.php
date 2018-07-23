@@ -128,7 +128,7 @@ class PersonnagesManager
 		$q->bindValue(':experience', $perso->experience(), PDO::PARAM_INT);
 
 		$q->execute();
-		
+
 		if ($q->rowCount() == 1) { // suggestion Caroline
 			echo 'Perso added.';     // suggestion
 		} else {                   // suggestion
@@ -218,7 +218,7 @@ $perso = new Personnage([
   'experience' => 0
 ]);
 
-$db = new PDO('mysql:host=localhost;dbname=tests', 'root', '');
+$db = new PDO('mysql:host=localhost;dbname=tests', 'root', ''); // mysqli ?
 
 $manager = new PersonnagesManager($db);
 
